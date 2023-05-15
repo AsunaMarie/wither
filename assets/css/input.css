@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+#temperatures-table, #precipitations-table, #sunrises-sunsets-table {
+    background: #2D3648;
+    border-radius: 1rem;
+    border-collapse: separate;
+    overflow: hidden;
+}
+
+#sunrises-sunsets-table {
+    margin: auto;
+}
+
+#temperatures-table td, #precipitations-table td, #sunrises-sunsets-table td {
+    padding: 1rem;
+}
+
+#temperatures-table tr:first-child, #precipitations-table tr:first-child, #sunrises-sunsets-table tr:first-child {
+    background: #10131a;
+    font-weight: bold;
+}
+
+#temperatures-table tr:nth-child(2n), #precipitations-table tr:nth-child(2n), #sunrises-sunsets-table tr:nth-child(2n) {
+    background: #3d475c;
+}
+
+#temperatures-table td:first-child, #precipitations-table td:first-child, #sunrises-sunsets-table td:first-child {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    #temperatures-table, #precipitations-table, #sunrises-sunsets-table {
+        display: flex;
+        justify-content: center;
+        background: white;
+        margin-top: 2rem;
+    }
+
+    #temperatures-table tr:first-child, #precipitations-table tr:first-child, #sunrises-sunsets-table tr:first-child {
+        display: none;
+    }
+
+    #temperatures-table tr:nth-child(2n+1), #precipitations-table tr:nth-child(2n+1), #sunrises-sunsets-table tr:nth-child(2n+1) {
+        background: #3D3648;
+    }
+
+    #temperatures-table td, #precipitations-table td, #sunrises-sunsets-table td {
+        display: block;
+    }
+
+    #temperatures-table td:first-child, #precipitations-table td:first-child, #sunrises-sunsets-table td:first-child {
+        background: #10131a;
+    }
+
+    #temperatures-table td:not(:first-child)::before, #precipitations-table td:not(:first-child)::before, #sunrises-sunsets-table td:not(:first-child)::before {
+        content: attr(data-cell) ": ";
+        font-weight: bold;
+    }
+}
